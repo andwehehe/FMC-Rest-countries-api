@@ -1,0 +1,70 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+@font-face {
+  font-family: 'Nunito Sans';
+  src: url('/src/assets/fonts/nunito-sans-v19-latin-300.woff2');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Nunito Sans';
+  src: url('/src/assets/fonts/nunito-sans-v19-latin-600.woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Nunito Sans';
+  src: url('/src/assets/fonts/nunito-sans-v19-latin-800.woff2');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@theme {
+  /*BG colors */
+  --color-bg-dark: hsl(207, 26%, 17%);
+  --color-surface-dark: hsl(209, 23%, 22%);
+  --color-bg-light: hsl(0, 0%, 99%);
+  --color-text-light: hsl(200, 15%, 8%);
+  --color-input-light: hsl(0, 0%, 50%);
+  --color-white: hsl(0, 100%, 100%);
+
+  /* Font */
+  --font-nunito: "Nunito Sans", sans-serif;
+
+  /* others */
+  --shadow-search: 0px 1px 5px 0px hsl(0, 0%, 82%);
+}
