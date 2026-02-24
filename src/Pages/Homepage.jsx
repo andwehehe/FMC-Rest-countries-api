@@ -1,4 +1,5 @@
 import Header from "../Components/Header";
+import Filter from "../Components/Filter";
 import search_icon from "/src/assets/images/search.png";
 
 function Homepage() {
@@ -16,6 +17,8 @@ function Homepage() {
                     className="text-sm"
                 />
             </div>
+
+            <Filter />
         </section>
     );
 }
