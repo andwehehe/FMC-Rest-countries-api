@@ -1,5 +1,6 @@
 import Header from "../Components/Header";
 import Filter from "../Components/Filter";
+import CountryInfoCards from "../Components/CountryInfoCards";
 import search_icon from "/src/assets/images/search.png";
 
 function Homepage() {
@@ -19,6 +20,7 @@ function Homepage() {
             </div>
 
             <Filter />
+            <CountryInfoCards />
         </section>
     );
 }
