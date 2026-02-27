@@ -3,8 +3,11 @@ import moon_icon from '/src/assets/images/moon.png';
 function Header() {
 
     return(
-        <header className='flex justify-between items center px-4 py-8 shadow-md'>
-            <h1 className='font-nunito font-extrabold '>
+        <header className='
+            flex justify-between items center px-4 py-8 shadow-md
+            md:py-6 lg:px-12 xl:px-18
+        '>
+            <h1 className='font-nunito font-extrabold md:text-xl'>
                 Where in the world?
             </h1>
             <div className='flex items-center gap-2'>

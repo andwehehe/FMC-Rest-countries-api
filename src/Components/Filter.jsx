@@ -11,16 +11,16 @@ function Filter() {
 
 
     return(
-       <fieldset className='font-nunito font-semibold text-sm mx-4 mt-12 w-max'>
+       <fieldset className='font-nunito font-semibold text-sm w-max relative'>
         
-            <button className='flex items-center gap-12 px-6 py-4 mb-2 rounded shadow-search'
+            <button className='flex items-center gap-12 px-6 py-4 rounded shadow-search'
                 onClick={toggleFilter}
             >
                 <span>Filter by Region</span>
                 <img src={arrowDown_icon} alt="arrow down" className='w-4 h-4' />
             </button>
 
-            <ul className="space-y-2 px-6 py-4 w-full rounded shadow-search hidden"
+            <ul className="space-y-2 px-6 py-4 w-full rounded shadow-search hidden absolute bg-light-bg mt-2"
                 style={{display: openFilter ? "block" : "none"}}
             >
 

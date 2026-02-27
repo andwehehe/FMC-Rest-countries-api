@@ -11,12 +11,12 @@ function CountryInfoCards() {
     return(
         <section className="
             font-nunito text-light-text m-4 py-4 grid place-items-center gap-12
-            sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 w-max mx-auto
+            sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 w-max mx-auto xl:gap-16
         ">
             {/* flex flex-col items-center justify-center gap-12 */}
             {
                 countriesData.map(({ flags, region, capital, population, name }, index) => {
-                    if(index > 7) return;
+                    // if(index > 7) return;
 
                     return(
                          !loading && 
