@@ -1,6 +1,6 @@
 import { useCountriesData } from "/src/hooks/useCountriesData.js";
 
-function CountryInfoCards() {
+function CountryInfoCards({ filter }) {
 
     const { countriesData, loading } = useCountriesData();
     // if(!loading) {
@@ -15,7 +15,9 @@ function CountryInfoCards() {
         ">
             {/* flex flex-col items-center justify-center gap-12 */}
             {
-                countriesData.map(({ flags, region, capital, population, name }, index) => {
+                countriesData.filter(item => {
+                    return filter === "all" ?  item.region !== "all" :  item.region === filter;
+                }).map(({ flags, region, capital, population, name }, index) => {
                     // if(index > 7) return;
 
                     return(
@@ -43,30 +45,6 @@ function CountryInfoCards() {
                         </article>
                     );
                 })
-            }
-
-            {
-                // !loading && 
-                // <article 
-                //     key={countriesData[73].capital[0]}
-                //     className="w-8/10 bg-white rounded-md overflow-hidden shadow-search max-w-69"
-                // >
-                //     <img src={countriesData[73].flags.png} alt={countriesData[73].flags.alt} />
-                //     <div className="p-6 mb-6 leading-relaxed">
-                //         <h3 className="font-nunito font-bold text-xl mb-4">{countriesData[73].name.common}</h3>
-                //         <p>
-                //             <span className="font-nunito font-semibold">Population: </span> {countriesData[73].population.toLocaleString()}
-                //         </p>
-                //         <p>
-                //             <span className="font-nunito font-semibold">Region: </span> 
-                //             {countriesData[73].region}
-                //         </p>
-                //         <p>
-                //             <span className="font-nunito font-semibold">Capital: </span> 
-                //             {countriesData[73].capital[0]}
-                //         </p>
-                //     </div>
-                // </article>
             }
 
         </section>

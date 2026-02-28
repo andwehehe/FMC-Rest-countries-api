@@ -1,22 +1,27 @@
 import arrowDown_icon from '/src/assets/images/down.png';
 import { useState } from 'react';
 
-function Filter() {
+function Filter({ setFilter }) {
 
     const [ openFilter, setOpenFilter ] = useState(false);
 
-    const toggleFilter = () => {
-        setOpenFilter(prev => !prev);
+    const toggleFilter = (e) => {
+        setOpenFilter(prev => !prev);   
+        setFilter(e.target.value);
     };
+
+    const displayFilter = () => {
+        setOpenFilter(prev => !prev);   
+    }
 
 
     return(
        <fieldset className='font-nunito font-semibold text-sm w-max relative'>
         
             <button className='flex items-center gap-12 px-6 py-4 rounded shadow-search'
-                onClick={toggleFilter}
+                onClick={displayFilter}
             >
-                <span>Filter by Region</span>
+                <span className='min-w-max'>Filter by Region</span>
                 <img src={arrowDown_icon} alt="arrow down" className='w-4 h-4' />
             </button>
 
@@ -39,7 +44,7 @@ function Filter() {
                     <label className="flex items-center gap-2 cursor-pointer">
                         <input 
                             type="radio" name="region" 
-                            value="africa" onChange={toggleFilter} 
+                            value="Africa" onChange={toggleFilter} 
                             className="accent-blue-900 " 
                         />
                         <span>Africa</span>
@@ -50,7 +55,7 @@ function Filter() {
                     <label className="flex items-center gap-2 cursor-pointer">
                         <input 
                             type="radio" name="region" 
-                            value="america" onChange={toggleFilter} 
+                            value="America" onChange={toggleFilter} 
                             className="accent-blue-900 " 
                         />
                         <span>America</span>
@@ -61,7 +66,7 @@ function Filter() {
                     <label className="flex items-center gap-2 cursor-pointer">
                         <input 
                             type="radio" name="region"
-                             value="asia" onChange={toggleFilter} 
+                             value="Asia" onChange={toggleFilter} 
                             className="accent-blue-900 " 
                         />
                         <span>Asia</span>
@@ -72,7 +77,7 @@ function Filter() {
                     <label className="flex items-center gap-2 cursor-pointer">
                         <input 
                             type="radio" name="region" 
-                            value="europe" onChange={toggleFilter} 
+                            value="Europe" onChange={toggleFilter} 
                             className="accent-blue-900 " 
                         />
                         <span>Europe</span>
@@ -83,7 +88,7 @@ function Filter() {
                     <label className="flex items-center gap-2 cursor-pointer">
                         <input 
                             type="radio" name="region" 
-                            value="oceania" onChange={toggleFilter} 
+                            value="Oceania" onChange={toggleFilter} 
                             className="accent-blue-900 " 
                         />
                         <span>Oceania</span>
