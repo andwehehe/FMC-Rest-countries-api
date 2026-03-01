@@ -1,7 +1,7 @@
 import arrowDown_icon from '/src/assets/images/down.png';
 import { useState } from 'react';
 
-function Filter({ setFilter }) {
+function Filter({ setFilter }) { 
 
     const [ openFilter, setOpenFilter ] = useState(false);
 
@@ -55,7 +55,7 @@ function Filter({ setFilter }) {
                     <label className="flex items-center gap-2 cursor-pointer">
                         <input 
                             type="radio" name="region" 
-                            value="America" onChange={toggleFilter} 
+                            value="Americas" onChange={toggleFilter} 
                             className="accent-blue-900 " 
                         />
                         <span>America</span>
