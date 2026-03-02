@@ -1,6 +1,6 @@
 import { useCountriesData } from "/src/hooks/useCountriesData.js";
 
-function CountryInfoCards({ filter }) {
+function CountryInfoCards({ filter, search }) {
 
     const { countriesData, loading } = useCountriesData();
     // if(!loading) {
@@ -13,13 +13,17 @@ function CountryInfoCards({ filter }) {
             font-nunito text-light-text m-4 py-4 grid place-items-center gap-12
             sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 w-max mx-auto xl:gap-16
         ">
-            {/* flex flex-col items-center justify-center gap-12 */}
             {
                 countriesData.filter(item => {
-                    return filter === "all" ?  item.region !== "all" :  item.region === filter;
+                    if(search) {
+                        return (filter === "all" ?  item.region !== "all" :  item.region === filter) && 
+                        item.name.common.toLowerCase().includes(search.toLowerCase());
+                    } else {
+                        return filter === "all" ?  item.region !== "all" :  item.region === filter;
+                    }
                 }
                 ).map(({ flags, region, capital, population, name }, index) => {
-                    
+
                     return(
                          !loading && 
                         <article 
@@ -45,6 +49,7 @@ function CountryInfoCards({ filter }) {
                         </article>
                     );
                 })
+                
             }
 
         </section>

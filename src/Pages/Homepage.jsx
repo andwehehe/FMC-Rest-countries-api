@@ -7,6 +7,11 @@ import { useState } from "react";
 function Homepage() {
 
     const [ filter, setFilter ] = useState("all");
+    const [ search, setSearch ] = useState("");
+
+    const searchCountry = (e) => {
+        setSearch(e.target.value);
+    };
 
     return(
         <section>
@@ -26,12 +31,13 @@ function Homepage() {
                         id="search"
                         placeholder="Search for a country..."
                         className="font-semibold text-sm outline-none w-full"
+                        onChange={searchCountry}
                     />
                 </div>
                 <Filter setFilter={setFilter} />
             </div>
             
-            <CountryInfoCards filter={filter} />
+            <CountryInfoCards filter={filter} search={search} />
         </section>
     );
 }
