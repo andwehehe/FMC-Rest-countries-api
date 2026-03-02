@@ -17,9 +17,9 @@ function CountryInfoCards({ filter }) {
             {
                 countriesData.filter(item => {
                     return filter === "all" ?  item.region !== "all" :  item.region === filter;
-                }).map(({ flags, region, capital, population, name }, index) => {
-                    // if(index > 7) return;
-
+                }
+                ).map(({ flags, region, capital, population, name }, index) => {
+                    
                     return(
                          !loading && 
                         <article 
