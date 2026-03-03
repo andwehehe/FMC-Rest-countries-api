@@ -13,10 +13,15 @@ function Homepage() {
         setSearch(e.target.value);
     };
 
+    const [ theme, setTheme ] = useState("light");
+    const selectedTheme = () => {
+        setTheme(theme === "light" ? "dark" : "light");
+    };
+
     return(
         <section>
 
-            <Header />
+            <Header selectedTheme={selectedTheme} theme={theme} />
             <div className="
                 flex flex-col items-start gap-8 px-4 my-8 sm:flex-row 
                 sm:justify-between lg:px-12 xl:px-18

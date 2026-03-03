@@ -3,7 +3,7 @@ import Homepage from "./Pages/Homepage"
 function App() {
 
   return (
-    <main className="bg-light-bg">
+    <main>
       <Homepage />
     </main>
   )

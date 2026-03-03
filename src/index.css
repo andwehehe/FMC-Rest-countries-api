@@ -56,7 +56,7 @@ ol {
 
 @theme {
   /*BG colors */
-  --color-bg-dark: hsl(207, 26%, 17%);
+  --color-dark-bg: hsl(207, 26%, 17%);
   --color-surface-dark: hsl(209, 23%, 22%);
   --color-light-bg: hsl(0, 0%, 99%);
   --color-light-text: hsl(200, 15%, 8%);
