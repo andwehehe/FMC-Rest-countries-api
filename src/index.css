@@ -56,16 +56,21 @@ ol {
 
 @theme {
   /*BG colors */
-  --color-dark-bg: hsl(207, 26%, 17%);
-  --color-surface-dark: hsl(209, 23%, 22%);
-  --color-light-bg: hsl(0, 0%, 99%);
-  --color-light-text: hsl(200, 15%, 8%);
-  --color-input-light: hsl(0, 0%, 50%);
-  --color-white: hsl(0, 100%, 100%);
+  --color-bg: hsl(0, 0%, 99%);
+  --color-text: hsl(200, 15%, 8%);
+  --color-input: hsl(0, 0%, 50%);
+  --color-card: hsl(0, 100%, 100%);
 
   /* Font */
   --font-nunito: "Nunito Sans", sans-serif;
 
   /* others */
   --shadow-search: 0px 1px 5px 0px hsl(0, 0%, 82%);
+}
+
+.dark {
+    --color-bg: hsl(207, 26%, 17%);
+    --color-card: hsl(209, 23%, 22%);
+    --color-text: hsl(0, 100%, 100%);
+    --shadow-search: 0px 1px 5px 0px hsl(0, 0%, 15%);
 }

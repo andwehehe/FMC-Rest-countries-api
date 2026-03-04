@@ -18,14 +18,14 @@ function Filter({ setFilter }) {
     return(
        <fieldset className='font-nunito font-semibold text-sm w-max relative'>
         
-            <button className='flex items-center gap-12 px-6 py-4 rounded shadow-search'
-                onClick={displayFilter}
+            <button className='flex items-center gap-12 px-6 py-4 rounded bg-card'
+                onClick={displayFilter} style={{boxShadow: 'var(--shadow-search)'}}
             >
-                <span className='min-w-max'>Filter by Region</span>
+                <span className='min-w-max text-text'>Filter by Region</span>
                 <img src={arrowDown_icon} alt="arrow down" className='w-4 h-4' />
             </button>
 
-            <ul className="space-y-2 px-6 py-4 w-full rounded shadow-search hidden absolute bg-light-bg mt-2"
+            <ul className="text-text space-y-2 px-6 py-4 w-full rounded shadow-search hidden absolute bg-bg mt-2"
                 style={{display: openFilter ? "block" : "none"}}
             >
 

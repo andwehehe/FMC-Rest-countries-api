@@ -10,7 +10,7 @@ function CountryInfoCards({ filter, search }) {
 
     return(
         <section className="
-            font-nunito text-light-text m-4 py-4 grid place-items-center gap-12
+            font-nunito text-text m-4 py-4 grid place-items-center gap-12
             sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 w-max mx-auto xl:gap-16
         ">
             {
@@ -28,7 +28,8 @@ function CountryInfoCards({ filter, search }) {
                          !loading && 
                         <article 
                             key={index}
-                            className="w-8/10 bg-white rounded-md overflow-hidden shadow-search w-69 h-full"
+                            className="w-8/10 bg-card rounded-md overflow-hidden w-69 h-full"
+                            style={{boxShadow: 'var(--shadow-search)'}}
                         >
                             <img src={flags.png} alt={flags.alt} className="w-full h-40" />
                             <div className="p-6 mb-6 leading-relaxed">
