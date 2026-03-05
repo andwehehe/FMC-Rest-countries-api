@@ -1,7 +1,8 @@
 import arrowDown_icon from '/src/assets/images/down.png';
+import arrowDown_icon_light from '/src/assets/images/down-light.png';
 import { useState } from 'react';
 
-function Filter({ setFilter }) { 
+function Filter({ setFilter, isDark }) { 
 
     const [ openFilter, setOpenFilter ] = useState(false);
 
@@ -22,11 +23,11 @@ function Filter({ setFilter }) {
                 onClick={displayFilter} style={{boxShadow: 'var(--shadow-search)'}}
             >
                 <span className='min-w-max text-text'>Filter by Region</span>
-                <img src={arrowDown_icon} alt="arrow down" className='w-4 h-4' />
+                <img src={isDark ? arrowDown_icon_light : arrowDown_icon} alt="arrow down" className='w-4 h-4' />
             </button>
 
-            <ul className="text-text space-y-2 px-6 py-4 w-full rounded shadow-search hidden absolute bg-bg mt-2"
-                style={{display: openFilter ? "block" : "none"}}
+            <ul className="text-text space-y-2 px-6 py-4 w-full rounded hidden absolute bg-bg mt-2"
+                style={{display: openFilter ? "block" : "none", boxShadow: 'var(--shadow-search)'}}
             >
 
                 <li>

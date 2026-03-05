@@ -13,14 +13,18 @@ function Homepage() {
         setSearch(e.target.value);
     };
 
+    const [ isDark, setIsDark ] = useState(false);
+
     const toggleTheme = () => {
+        setIsDark(prev => !prev);
+        document.body.classList.toggle('dark_body');
         document.documentElement.classList.toggle('dark');
     };
 
     return(
         <section className="bg-bg">
 
-            <Header toggleTheme={toggleTheme} />
+            <Header toggleTheme={toggleTheme} isDark={isDark} />
             <div className="
                 flex flex-col items-start gap-8 px-4 my-8 sm:flex-row 
                 sm:justify-between lg:px-12 xl:px-18
@@ -38,7 +42,7 @@ function Homepage() {
                         onChange={searchCountry}
                     />
                 </div>
-                <Filter setFilter={setFilter} />
+                <Filter setFilter={setFilter} isDark={isDark} />
             </div>
             
             <CountryInfoCards filter={filter} search={search} />
