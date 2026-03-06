@@ -2,7 +2,7 @@ import Header from "../Components/Header";
 import Filter from "../Components/Filter";
 import CountryInfoCards from "../Components/CountryInfoCards";
 import search_icon from "/src/assets/images/search.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function Homepage() {
 
@@ -13,18 +13,29 @@ function Homepage() {
         setSearch(e.target.value);
     };
 
-    const [ isDark, setIsDark ] = useState(false);
+    const [theme, setTheme] = useState(
+        () => localStorage.getItem("theme") || "dark"
+    );
 
     const toggleTheme = () => {
-        setIsDark(prev => !prev);
+        const savedTheme = theme === "dark" ? "light" : "dark";
+        setTheme(savedTheme);
+        localStorage.setItem("theme", savedTheme);
         document.body.classList.toggle('dark_body');
         document.documentElement.classList.toggle('dark');
     };
 
+    useEffect(() => {
+        if(theme === 'dark') {
+            document.documentElement.classList.add('dark');
+            document.body.classList.add('dark_body');
+        }
+    }, [theme])
+
     return(
         <section className="bg-bg">
 
-            <Header toggleTheme={toggleTheme} isDark={isDark} />
+            <Header toggleTheme={toggleTheme} theme={theme} />
             <div className="
                 flex flex-col items-start gap-8 px-4 my-8 sm:flex-row 
                 sm:justify-between lg:px-12 xl:px-18
@@ -42,7 +53,7 @@ function Homepage() {
                         onChange={searchCountry}
                     />
                 </div>
-                <Filter setFilter={setFilter} isDark={isDark} />
+                <Filter setFilter={setFilter} theme={theme} />
             </div>
             
             <CountryInfoCards filter={filter} search={search} />

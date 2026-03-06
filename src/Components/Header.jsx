@@ -1,7 +1,7 @@
 import moon_icon from '/src/assets/images/moon.png';
 import sun_icon from '/src/assets/images/sun-icon.svg';
 
-function Header({ toggleTheme, isDark }) {
+function Header({ toggleTheme, theme }) {
 
     return(
         <header className='
@@ -12,7 +12,7 @@ function Header({ toggleTheme, isDark }) {
                 Where in the world?
             </h1>
             <div className='flex items-center gap-2' onClick={toggleTheme}>
-                <img src={isDark ? sun_icon : moon_icon} alt="moon" className='w-4' />
+                <img src={theme !== "dark" ? moon_icon : sun_icon} alt="moon" className='w-4' />
                 <p className='font-nunito font-semibold'>Dark Mode</p>
             </div>
         </header>
