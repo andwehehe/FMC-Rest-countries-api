@@ -23,7 +23,7 @@ function Filter({ setFilter, theme }) {
                 onClick={displayFilter} style={{boxShadow: 'var(--shadow-search)'}}
             >
                 <span className='min-w-max text-text'>Filter by Region</span>
-                <img src={theme !== "dark" ? arrowDown_icon : arrowDown_icon_light} alt="arrow down" className='w-4 h-4' />
+                <img src={theme === "dark" ? arrowDown_icon_light : arrowDown_icon} alt="arrow down" className='w-4 h-4' />
             </button>
 
             <ul className="text-text space-y-2 px-6 py-4 w-full rounded hidden absolute bg-bg mt-2"
@@ -59,7 +59,7 @@ function Filter({ setFilter, theme }) {
                             value="Americas" onChange={toggleFilter} 
                             className="accent-blue-900 " 
                         />
-                        <span>America</span>
+                        <span>Americas</span>
                     </label>
                 </li>
 

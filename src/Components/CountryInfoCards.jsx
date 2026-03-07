@@ -3,10 +3,6 @@ import { useCountriesData } from "/src/hooks/useCountriesData.js";
 function CountryInfoCards({ filter, search }) {
 
     const { countriesData, loading } = useCountriesData();
-    // if(!loading) {
-    //     console.log(countriesData[67].capital[0])
-    //     console.log(countriesData[67])
-    // }
 
     return(
         <section className="
