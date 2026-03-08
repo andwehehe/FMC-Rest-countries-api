@@ -1,5 +1,5 @@
 import arrowDown_icon from '/src/assets/images/down.png';
-import arrowDown_icon_light from '/src/assets/images/down-light.png';
+import arrowDown_icon_light from '/src/assets/images/down-light.svg';
 import { useState } from 'react';
 
 function Filter({ setFilter, theme }) { 
