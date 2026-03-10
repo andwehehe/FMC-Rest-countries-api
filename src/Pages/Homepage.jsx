@@ -1,5 +1,6 @@
 import Header from "../Components/Header";
 import Filter from "../Components/Filter";
+import MoreInfo from "../Components/MoreInfo";
 import CountryInfoCards from "../Components/CountryInfoCards";
 import search_icon from "/src/assets/images/search.png";
 import { useEffect, useState } from "react";
@@ -32,10 +33,15 @@ function Homepage() {
         }
     }, [theme])
 
+    const [ moreCountryInfo, setMoreCountryInfo ] = useState([]); 
+
     return(
         <section className="bg-bg">
 
             <Header toggleTheme={toggleTheme} theme={theme} />
+            <MoreInfo 
+                moreCountryInfo={moreCountryInfo}
+            />
             <div className="
                 flex flex-col items-start gap-8 px-4 my-8 sm:flex-row 
                 sm:justify-between lg:px-12 xl:px-18
@@ -56,7 +62,7 @@ function Homepage() {
                 <Filter setFilter={setFilter} theme={theme} />
             </div>
             
-            <CountryInfoCards filter={filter} search={search} />
+            <CountryInfoCards filter={filter} search={search} setMoreCountryInfo={setMoreCountryInfo} />
         </section>
     );
 }

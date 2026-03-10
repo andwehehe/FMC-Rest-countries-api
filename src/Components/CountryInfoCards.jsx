@@ -1,7 +1,6 @@
 import { useCountriesData } from "/src/hooks/useCountriesData.js";
-import MoreInfo from "./MoreInfo";
 
-function CountryInfoCards({ filter, search }) {
+function CountryInfoCards({ filter, search, setMoreCountryInfo }) {
 
     const { countriesData, loading } = useCountriesData();
 
@@ -20,7 +19,6 @@ function CountryInfoCards({ filter, search }) {
                     }
                 }
                 ).map(({ flags, region, capital, population, name, subregion, tld, currencies, languages, borders }, index) => {
-                    console.log(borders);
                     // Object.values(currencies || {}).map(c => c.name).join(", ") currencies
                     // Object.values(languages || {}).join(", ") languages
                     return(
@@ -29,8 +27,8 @@ function CountryInfoCards({ filter, search }) {
                             key={index}
                             className="w-8/10 bg-card rounded-md overflow-hidden w-69 h-full"
                             style={{boxShadow: 'var(--shadow-search)'}}
+                            onClick={() => setMoreCountryInfo([ flags, region, capital, population, name, subregion, tld, currencies, languages, borders ])}
                         >
-                            <MoreInfo props={{ region, capital, population, name, subregion, tld, currencies, languages, borders }} />
                             <img src={flags.png} alt={flags.alt} className="w-full h-40" />
                             <div className="p-6 mb-6 leading-relaxed">
                                 <h3 className="font-nunito font-bold text-xl mb-4">{name.common}</h3>

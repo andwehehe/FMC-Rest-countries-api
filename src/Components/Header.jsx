@@ -11,7 +11,7 @@ function Header({ toggleTheme, theme }) {
             <h1 className='font-nunito font-extrabold md:text-xl'>
                 Where in the world?
             </h1>
-            <div className='flex items-center gap-2' onClick={toggleTheme}>
+            <div className='flex items-center gap-2 cursor-pointer' onClick={toggleTheme}>
                 <img src={theme === "dark" ?  sun_icon : moon_icon} alt="moon" className='w-4' />
                 <p className='font-nunito font-semibold'>Dark Mode</p>
             </div>
