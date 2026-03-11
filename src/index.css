@@ -57,7 +57,7 @@ ol {
   /*BG colors */
   --color-bg: hsl(0, 0%, 99%);
   --color-text: hsl(200, 15%, 8%);
-  --color-input: hsl(0, 0%, 50%);
+  --color-input: hsl(200, 15%, 8%);
   --color-card: hsl(0, 100%, 100%);
 
   /* Font */
@@ -71,6 +71,7 @@ ol {
     --color-bg: hsl(207, 26%, 17%);
     --color-card: hsl(209, 23%, 22%);
     --color-text: hsl(0, 100%, 100%);
+    --color-input: hsl(0, 0%, 83%);
     --shadow-search: 0px 1px 5px 0px hsl(0, 0%, 15%);
 }
 

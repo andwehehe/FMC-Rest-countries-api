@@ -41,6 +41,7 @@ function Homepage() {
             <Header toggleTheme={toggleTheme} theme={theme} />
             <MoreInfo 
                 moreCountryInfo={moreCountryInfo}
+                setMoreCountryInfo={setMoreCountryInfo}
             />
             <div className="
                 flex flex-col items-start gap-8 px-4 my-8 sm:flex-row 
