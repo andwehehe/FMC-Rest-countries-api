@@ -1,12 +1,14 @@
 import Header from "../Components/Header";
 import Filter from "../Components/Filter";
-import MoreInfo from "../Components/MoreInfo";
 import CountryInfoCards from "../Components/CountryInfoCards";
 import search_icon from "/src/assets/images/search.png";
-import { useEffect, useState } from "react";
+import { useState, useContext } from "react";
+import { CountryInfoContext } from "../Contexts/CountryInfoContext";
 
 function Homepage() {
 
+    
+    const { moreCountryInfo, setMoreCountryInfo } = useContext(CountryInfoContext);
     const [ filter, setFilter ] = useState("all");
     const [ search, setSearch ] = useState("");
 
@@ -14,35 +16,16 @@ function Homepage() {
         setSearch(e.target.value);
     };
 
-    const [theme, setTheme] = useState(
-        () => localStorage.getItem("theme") || "dark"
-    );
-
-    const toggleTheme = () => {
-        const savedTheme = theme === "dark" ? "light" : "dark";
-        setTheme(savedTheme);
-        localStorage.setItem("theme", savedTheme);
-        document.body.classList.toggle('dark_body');
-        document.documentElement.classList.toggle('dark');
-    };
-
-    useEffect(() => {
-        if(theme === 'dark') {
-            document.documentElement.classList.add('dark');
-            document.body.classList.add('dark_body');
-        }
-    }, [theme])
-
-    const [ moreCountryInfo, setMoreCountryInfo ] = useState([]); 
+    
 
     return(
         <section className="bg-bg">
 
-            <Header toggleTheme={toggleTheme} theme={theme} />
-            <MoreInfo 
+            <Header />
+            {/* <MoreInfo 
                 moreCountryInfo={moreCountryInfo}
                 setMoreCountryInfo={setMoreCountryInfo}
-            />
+            /> */}
             <div className="
                 flex flex-col items-start gap-8 px-4 my-8 sm:flex-row 
                 sm:justify-between lg:px-12 xl:px-18
@@ -60,10 +43,10 @@ function Homepage() {
                         onChange={searchCountry}
                     />
                 </div>
-                <Filter setFilter={setFilter} theme={theme} />
+                <Filter setFilter={setFilter} />
             </div>
             
-            <CountryInfoCards filter={filter} search={search} setMoreCountryInfo={setMoreCountryInfo} />
+            <CountryInfoCards filter={filter} search={search} setMoreCountryInfo={setMoreCountryInfo} moreCountryInfo={moreCountryInfo} />
         </section>
     );
 }

@@ -1,7 +1,11 @@
 import moon_icon from '/src/assets/images/moon.png';
 import sun_icon from '/src/assets/images/sun-icon.svg';
+import { useContext } from 'react'
+import { ThemeContext } from '../Contexts/ThemeContext';
 
-function Header({ toggleTheme, theme }) {
+function Header() {
+
+    const { theme, toggleTheme } = useContext(ThemeContext);
 
     return(
         <header className='

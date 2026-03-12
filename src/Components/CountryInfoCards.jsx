@@ -1,8 +1,15 @@
 import { useCountriesData } from "/src/hooks/useCountriesData.js";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
-function CountryInfoCards({ filter, search, setMoreCountryInfo }) {
+function CountryInfoCards({ filter, search, setMoreCountryInfo, moreCountryInfo }) {
 
     const { countriesData, loading } = useCountriesData();
+    const NAVIGATE_TO_MORE_INFO = useNavigate();
+
+    useEffect(() => {
+        moreCountryInfo.length !== 0 && NAVIGATE_TO_MORE_INFO('MoreInfo');
+    }, [moreCountryInfo, NAVIGATE_TO_MORE_INFO])
 
     return(
         <section className="
@@ -19,15 +26,16 @@ function CountryInfoCards({ filter, search, setMoreCountryInfo }) {
                     }
                 }
                 ).map(({ flags, region, capital, population, name, subregion, tld, currencies, languages, borders }, index) => {
-                    // Object.values(currencies || {}).map(c => c.name).join(", ") currencies
-                    // Object.values(languages || {}).join(", ") languages
+
                     return(
                          !loading && 
                         <article 
                             key={index}
                             className="w-8/10 bg-card rounded-md overflow-hidden w-69 h-full"
                             style={{boxShadow: 'var(--shadow-search)'}}
-                            onClick={() => setMoreCountryInfo([ flags, region, capital, population, name, subregion, tld, currencies, languages, borders ])}
+                            onClick={() => {
+                                setMoreCountryInfo([ flags, region, capital, population, name, subregion, tld, currencies, languages, borders ])}
+                            }
                         >
                             <img src={flags.png} alt={flags.alt} className="w-full h-40" />
                             <div className="p-6 mb-6 leading-relaxed">

@@ -1,10 +1,12 @@
 import arrowDown_icon from '/src/assets/images/down.png';
 import arrowDown_icon_light from '/src/assets/images/down-light.svg';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import { ThemeContext } from "../Contexts/ThemeContext";
 
-function Filter({ setFilter, theme }) { 
+function Filter({ setFilter }) { 
 
     const [ openFilter, setOpenFilter ] = useState(false);
+    const { theme } = useContext(ThemeContext);
 
     const toggleFilter = (e) => {
         setOpenFilter(prev => !prev);   
