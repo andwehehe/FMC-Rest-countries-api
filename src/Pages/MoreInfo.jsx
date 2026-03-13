@@ -118,7 +118,7 @@ function MoreInfo() {
                                         </div>
                                     );
                                 })
-                                : <p className="text-sm bg-card w-max px-5 py-1">None</p>
+                                : <p className="text-sm bg-card w-max px-5 py-1">No border country</p>
                             }
                         </div>
                     </article>
