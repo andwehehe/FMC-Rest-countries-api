@@ -35,7 +35,7 @@ function Filter({ setFilter }) {
                 <li>
                     <label className="flex items-center gap-2 cursor-pointer">
                         <input 
-                            type="radio" name="region" 
+                            type="radio" name="region" id='filter_all'
                             value="all" defaultChecked onChange={toggleFilter} 
                             className="accent-blue-900 " 
                         />
@@ -46,7 +46,7 @@ function Filter({ setFilter }) {
                 <li>
                     <label className="flex items-center gap-2 cursor-pointer">
                         <input 
-                            type="radio" name="region" 
+                            type="radio" name="region" id='filter_africa'
                             value="Africa" onChange={toggleFilter} 
                             className="accent-blue-900 " 
                         />
@@ -57,7 +57,7 @@ function Filter({ setFilter }) {
                 <li>
                     <label className="flex items-center gap-2 cursor-pointer">
                         <input 
-                            type="radio" name="region" 
+                            type="radio" name="region" id='filter_americas'
                             value="Americas" onChange={toggleFilter} 
                             className="accent-blue-900 " 
                         />
@@ -68,7 +68,7 @@ function Filter({ setFilter }) {
                 <li>
                     <label className="flex items-center gap-2 cursor-pointer">
                         <input 
-                            type="radio" name="region"
+                            type="radio" name="region" id='filter_asia'
                              value="Asia" onChange={toggleFilter} 
                             className="accent-blue-900 " 
                         />
@@ -79,7 +79,7 @@ function Filter({ setFilter }) {
                 <li>
                     <label className="flex items-center gap-2 cursor-pointer">
                         <input 
-                            type="radio" name="region" 
+                            type="radio" name="region" id='filter_europe'
                             value="Europe" onChange={toggleFilter} 
                             className="accent-blue-900 " 
                         />
@@ -90,7 +90,7 @@ function Filter({ setFilter }) {
                 <li>
                     <label className="flex items-center gap-2 cursor-pointer">
                         <input 
-                            type="radio" name="region" 
+                            type="radio" name="region" id='filter_oceania'
                             value="Oceania" onChange={toggleFilter} 
                             className="accent-blue-900 " 
                         />
